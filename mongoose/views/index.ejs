@@ -1,0 +1,17 @@
+
+        <h1> ini adalah halaman HOME</h1>
+        <h2>hallo <%= nama %> </h2>
+
+        <h4> daftar nama mahasiswa </h4>
+        <% if (mahasiswa.length < 1) { %>
+            <p> DATA YANG DICARI TIDAK ADA</p>
+        <% } %>     
+        <% mahasiswa.forEach(mhs => { %>
+            <ul>
+                <li>nama : <%= mhs.nama  %> </li>
+                <li>email : <%= mhs.email  %> </li>  
+            </ul>
+            <% }) %>
+            
+        </body>
+        </html>

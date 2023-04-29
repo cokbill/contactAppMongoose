@@ -1,0 +1,39 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-md-8">
+            <h2 class="text-light mb-3">daftar contact</h2>
+            <table class="table text-light">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">no. telp</th>
+                    <th scope="col">action</th>
+                  </tr>
+                </thead>  
+                    <% if (contacts.length === 0) { %>
+                      <tr>
+                        <td colspan="4">
+                          <div class="alert alert-danger font-weight-bold" role="alert">
+                            data contact masih kosong
+                          </div>
+                        </td>
+                      </tr>
+                    <% } %>                 
+                <tbody class="table-group-divider text-dark">
+                  <% contacts.forEach((c, index) => {index++ %>
+                    <tr>
+                      <th scope="row"><%= index++ %></th>
+                      <td><%= c.nama %></td>
+                      <td><%= c.nohp %></td>
+                      <td>
+                          <a href="/contact/<%= c.nama %>"class="btn btn-success badge rounded-pill"><i class="bi bi-info-circle"></i> detail</a>
+                      </td>
+                    </tr>
+                  <% }) %>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
